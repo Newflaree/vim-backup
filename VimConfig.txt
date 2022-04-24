@@ -1,0 +1,89 @@
+"VimConfig
+"--------------------------------------------------
+set number
+set mouse=a
+set numberwidth=1
+set clipboard=unnamed
+syntax enable
+set showcmd
+set ruler
+set cursorline
+set encoding=utf-8
+set showmatch
+set sw=2
+set relativenumber
+set laststatus=2
+set noshowmode
+set bg=dark
+set hidden
+set tabstop=2
+set nowrap
+set autoindent
+set ts=2 sw=2 et
+"--------------------------------------------------
+
+"Plugins
+"--------------------------------------------------
+call plug#begin('~/.config/nvim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vim-easymotion'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tribela/vim-transparent'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
+Plug 'tyewang/vimux-jest-test'
+Plug 'janko/vim-test'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-surround'
+Plug 'tasn/vim-tsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'moll/vim-node'
+Plug 'nathanaelkane/vim-indent-guides'
+call plug#end()
+"--------------------------------------------------
+
+"PluginsConfig
+"--------------------------------------------------
+let g:closetag_filenames = '*.html, *.js, *.jsx, *.ts, *.tsx'
+let NERDTreeQuitOnOpen=1
+let g:indent_guides_enable_on_vim_startup = 1
+"--------------------------------------------------
+
+"Theme
+"--------------------------------------------------
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+"--------------------------------------------------
+
+"LeaderKeyShortcuts
+"--------------------------------------------------
+let mapleader=" "
+nmap <Leader>s <Plug>(easymotion-s2)
+nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>nr :NERDTreeToggle<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>Q :q!<CR>
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
+nmap <Leader>h :tabprevious<cr>
+nmap <Leader>l :tabnext<cr>
+nnoremap <Leader>k :m .-2<CR>==
+nnoremap <Leader>j :m .+1<CR>==
+nnoremap <Leader>G :G<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gl :Gpull<CR>
+nnoremap <Leader>t :term<CR>
+nnoremap <Leader>te :TestNearest<CR>
+nnoremap <Leader>T :TestFile<CR>
+nnoremap <Leader>TT :TestSuite<CR>
+"--------------------------------------------------
+
