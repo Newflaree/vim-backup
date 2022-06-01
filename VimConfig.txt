@@ -20,6 +20,7 @@ set tabstop=2
 set nowrap
 set autoindent
 set ts=2 sw=2 et
+set autoread
 "--------------------------------------------------
 
 "Plugins
@@ -51,6 +52,7 @@ call plug#end()
 
 "PluginsConfig
 "--------------------------------------------------
+let NERDTreeShowHidden=1
 let g:closetag_filenames = '*.html, *.js, *.jsx, *.ts, *.tsx'
 let NERDTreeQuitOnOpen=1
 let g:indent_guides_enable_on_vim_startup = 1
@@ -87,4 +89,3 @@ nnoremap <Leader>te :TestNearest<CR>
 nnoremap <Leader>T :TestFile<CR>
 nnoremap <Leader>TT :TestSuite<CR>
 "--------------------------------------------------
-
