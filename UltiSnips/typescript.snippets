@@ -1,0 +1,393 @@
+snippet lorem "Lorem Iptsum"
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus elit, ullamcorper eget nisl nec, tempus tempor lorem. Vestibulum euismod orci eu tellus convallis, a eleifend metus posuere. Pellentesque a nibh eget risus cursus hendrerit. In eget gravida augue, at egestas tortor. Vivamus nec cursus erat. Proin in suscipit erat, non tempor enim. Sed ac odio tincidunt, tempor nunc sit amet, tristique augue.
+endsnippet
+
+snippet clg "console.log();"
+console.log( $1 );
+endsnippet
+
+snippet imp "import a from 'b'"
+import ${2:{ $3 }} from '$1';
+endsnippet
+
+snippet expall "export * from 'a'"
+export * from '$1';
+endsnippet
+
+snippet swt "export * from 'a'"
+switch ( $1 ) {
+	case '$2':
+		return;
+
+	case '$3':
+		return;
+
+	default:
+		return;
+}
+endsnippet
+
+snippet trc "Generate a try/catch statement"
+try {
+
+} catch ( error ) {
+
+}
+endsnippet
+
+snippet prfc "Create a React Functional Component for NextPage"
+
+const $1Page = () => {
+	return (
+		<div>$1Page</div>
+	);
+}
+
+export default $1Page;
+endsnippet
+
+snippet rfc "Create a React Functional Component"
+
+export const $1 = () => {
+	return (
+		<div>$1</div>
+	);
+}
+endsnippet
+
+
+snippet nodec "Create a Controller for Nodejs"
+// Express
+import {
+  Request,
+  Response
+} from 'express';
+// Utils
+import {
+  logger,
+  messages,
+  statusCodes
+} from '../../../utils';
+
+
+/**
+ * Handler description
+ *
+ * PATH: /api/...
+ * AUTH-REQUIRED: false
+ * ADMIN-REQUIRED: false
+ *
+ * @param { Object } req - The HTTP request object.
+ * @param { Object } res - The HTTP response object.
+ * @returns { void }
+ */
+const $1Controller = async (
+  req: Request,
+  res: Response
+): Promise<any> => {
+  try {
+
+    res.status( statusCodes.SUCCESS ).json({
+      ok: true,
+      message: '$1Controller'
+    });
+  
+  } catch ( error ) {
+    logger.consoleErrorsHandler( error, '$1Controller' );
+
+    res.status( statusCodes.SERVER_ERROR ).json({
+      ok: false,
+      message: messages.SERVER_ERROR
+    });
+  }
+}
+
+export default $1Controller;
+endsnippet
+
+
+snippet nodemod "Create a Module for Nodejs"
+// Express
+import { Request } from 'express';
+// Service
+import {
+
+} from '../services';
+// Utils
+import {
+  logger,
+  statusCodes
+} from '../../../utils';
+
+
+const $1Module = async (
+  req: Request
+): Promise<any> => {
+  try {
+
+    return {
+      ok: true,
+      statusCode: statusCodes.SUCCESS,
+      message: '$1Module'
+    }
+
+  } catch ( error ) {
+    logger.consoleErrorsHandler( error, '$1Module' );
+
+    return {
+      ok: false,
+      statusCode: statusCodes.BAD_REQUEST,
+      message: error
+    }
+  }
+}
+
+export default $1Module;
+endsnippet
+
+snippet nodes "Create a Service for Nodejs"
+// Models
+import {} from '../models';
+// Utils
+import { logger } from '../../../utils';
+
+
+const $1Service = async (
+  email: string
+): Promise<boolean> => {
+  try {
+
+    return true
+
+  } catch ( error ) {
+    logger.consoleErrorsHandler( error, '$1Service' );
+
+    return false;
+  }
+}
+
+export default $1Service;
+endsnippet
+
+snippet nodem "Create a Mongoose Model"
+// Mongoose
+import { Schema, model, models } from 'mongoose';
+
+
+const $1Schema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+}, {
+  timestamps: true
+});
+
+const $1 = models.$1 || model( '$1', $1Schema );
+
+
+export default $1;
+endsnippet
+
+
+snippet ust "useState"
+const [ $1, set$1 ] = useState({});
+endsnippet
+
+snippet uef "useEffect"
+useEffect( () => {
+	return () => {}
+}, [] );
+endsnippet
+
+snippet nextlink "Next Link"
+// Next.js
+import NextLink from 'next/link';
+endsnippet
+
+snippet rctx "react context"
+import { createContext } from 'react';
+
+export const $1Context = createContext();
+endsnippet
+
+snippet rprov "react provider"
+// React
+import { useReducer } from 'react';
+// Context
+import { $1Context, $1Reducer } from './';
+
+
+const $1_INITIAL_STATE =	{
+	property: false
+}
+
+export const $1Provider = ({ children }) => {
+	const [ state, dispatch ] = useReducer( $1Reducer, $1_INITIAL_STATE );
+
+	return (
+		<$1Context.Provider
+			value={{
+				...state
+			}}
+		>
+			{ children }
+		</$1Context.Provider>
+	);
+};
+endsnippet
+
+snippet rred "react reducer"
+
+export const $1Reducer = ( state, action ) => {
+	switch ( action.type ) {
+		case '[$1] - ':
+			return {
+				...state,
+			}
+
+		default: 
+			return state;
+	}
+};
+endsnippet
+
+snippet ctxindex "Context Index"
+export * from './$1Context';
+export * from './$1Provider';
+export * from './$1Reducer';
+endsnippet
+
+snippet gssp "getServerSideProps"
+export const getServerSideProps = async ( ctx ) => {
+
+  return {
+    props: {},
+  }
+}
+endsnippet
+
+snippet gspt "getStatickPaths"
+export const getStatickPaths = async ( ctx ) => {
+	const { data } = await // Your fetch function here
+
+  return {
+		paths: [
+			{
+				params: {
+
+				}
+			}
+		],
+		fallback: 'blocking'
+  }
+}
+endsnippet
+
+snippet gspr "getStatickProps"
+export const getStatickProps = async ( ctx ) => {
+	const { data } = await // Your fetch function here
+
+  return {
+		props: {
+
+		}
+  }
+}
+endsnippet
+
+snippet napi "Api item for Next.js"
+// Controllers
+
+
+export default function handler( req, res ) {
+  switch ( req.method ) {
+    case 'GET':
+      return method( req, res );
+  
+    default:
+      return res.status( 400 ).json({
+        ok: false,
+        message: 'Endpoint not implemented'
+      });
+  }
+}
+endsnippet
+
+snippet lrc "Layout React Component"
+export default function $1Layout({
+	children
+}: {
+children: React.ReactNode;
+}) {
+	return (
+		<div>
+			<h1>Hello Root Layout $1</h1>
+		</div>
+	);
+}
+endsnippet
+
+snippet prc "Page React Component"
+export default function() {
+	return (
+		<div>
+			<h1>Hello Page</h1>
+		</div>
+	);
+}
+endsnippet
+
+
+
+
+snippet rnd "React Native Component Default"
+// React Native
+import { 
+  View,
+  Text
+} from 'react-native';
+
+
+const $1 = () => {
+  return (
+    <View>
+      <Text>$1</Text>
+    </View>
+  );
+}
+
+export default $1;
+endsnippet
+
+snippet rnc "React Native Component"
+// React Native
+import { 
+  View,
+  Text
+} from 'react-native';
+
+
+export const $1 = () => {
+  return (
+    <View>
+      <Text>$1</Text>
+    </View>
+  );
+}
+endsnippet
+
+snippet rcm "React Coment"
+{ /$1/ }
+endsnippet
+
+snippet muisx "MUI Styles"
+import {
+  SxProps,
+  Theme
+} from '@mui/material/styles';
+
+
+export const setStyle: SxProps<Theme> = ( theme ) => ({});
+//export const setStyle: SxProps<Theme> = ( theme ) => ({});
+endsnippet

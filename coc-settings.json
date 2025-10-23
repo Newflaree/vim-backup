@@ -1,0 +1,82 @@
+{
+  // ---------- Sugerencias / UX ----------
+  "suggest.noselect": false,
+  "suggest.enablePreselect": true,
+  "suggest.triggerAfterInsertEnter": true,
+
+  // ---------- Format on Save ----------
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "css",
+    "scss",
+    "html",
+    "yaml",
+    "markdown"
+  ],
+
+  // ---------- ESLint + Prettier ----------
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "codeActionOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.disableSuccessMessage": true,
+
+  // ---------- TypeScript / JavaScript ----------
+  "tsserver.enable": true,
+  "tsserver.useSeparateDiagnostics": false,
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "tsserver.preferences.includeCompletionsForModuleExports": true,
+  "tsserver.preferences.includeCompletionsWithSnippetText": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  // Si usas TypeScript global con nvm y quieres forzarlo, descomenta y ajusta la ruta:
+  // "tsserver.tsdk": "~/.nvm/versions/node/current/lib/node_modules/typescript/lib",
+
+  // ---------- Tailwind CSS ----------
+  "tailwindCSS.validate": true,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html",
+    "javascriptreact": "html"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    ".*[cC]lassName.*"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)`",
+    "tw\\([^)]*\\)",
+    "clsx\\(([^)]*)\\)",
+    "cva\\(([^)]*)\\)"
+  ],
+
+  // ---------- HTML / CSS / JSON / YAML ----------
+  "css.validate": true,
+  "html.validate.styles": true,
+  "html.validate.scripts": true,
+  "json.format.enable": true,
+  "yaml.format.enable": true,
+
+  // ---------- Git ----------
+  "git.enableGutters": true,
+
+  // ---------- Diagnósticos / Virtual Text ----------
+  "diagnostic.enable": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": true,
+
+  // ---------- Snippets (UltiSnips vía coc-ultisnips) ----------
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/UltiSnips"
+  ]
+}
